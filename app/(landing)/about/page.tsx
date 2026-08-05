@@ -4,6 +4,7 @@ import { Badge } from "../../../components/ui/badge";
 import { SectionTitle } from "../../../components/ui/section-title";
 import { ArrowRight, Compass, HeartHandshake, Rocket, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { connectDB } from "@/lib/mongodb";
 
 const values = [
   { title: "Clarity", text: "Every workflow is designed to feel effortless for educators and families." },
@@ -16,6 +17,18 @@ const timeline = [
   { year: "2022", title: "Expanded", text: "Scaled from a handful of pilot schools to a national education platform." },
   { year: "2026", title: "Now", text: "Powering modern institutions with elegant, flexible operations." },
 ];
+
+
+const connectToDatabase = async () => {
+  try {
+    await connectDB();  
+  } catch (error) {
+    console.error("Error connecting to the database:", error);
+  }
+
+};
+
+connectToDatabase();
 
 export default function AboutPage() {
   return (
