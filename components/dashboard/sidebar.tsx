@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BookOpen, CalendarDays, FileText, GraduationCap, LayoutGrid, MessageSquare, Settings, Sparkles, Users2 } from "lucide-react";
 import { cn } from "../ui/cn";
+import LogoutButton from "../auth/logout";
 
 type SidebarProps = {
   items: Array<{ href: string; label: string; icon: typeof LayoutGrid }>;
@@ -45,9 +46,11 @@ export function Sidebar({ items, title }: SidebarProps) {
         })}
       </div>
 
-      <div className="mt-auto rounded-3xl border border-white/10 bg-white/10 p-5">
-        <p className="text-sm font-semibold text-white">Need guidance?</p>
-        <p className="mt-2 text-sm leading-7 text-slate-400">Use the live workspace to support students, teachers, and families with confidence.</p>
+      <div className="mt-auto ">
+        {/* <p className="text-sm font-semibold text-white">Need guidance?</p>
+        <p className="mt-2 text-sm leading-7 text-slate-400">Use the live workspace to support students, teachers, and families with confidence.</p> */}
+            <LogoutButton/>
+
       </div>
     </aside>
   );
