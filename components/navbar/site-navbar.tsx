@@ -43,7 +43,7 @@ export function SiteNavbar() {
             Login
           </Link>
           <Button asChild variant="primary" size="sm" className="rounded-full">
-            <Link href="/demo">Book Demo</Link>
+            <Link href="/demo">See Demo</Link>
           </Button>
           <button className="rounded-full border border-slate-200 p-2 text-slate-600 md:hidden">
             <Menu size={18} />
