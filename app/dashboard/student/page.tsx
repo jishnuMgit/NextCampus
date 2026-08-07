@@ -18,7 +18,7 @@ export default function StudentDashboardPage() {
   return (
     <div className="flex min-h-screen bg-slate-50">
       <Sidebar items={studentItems} title="Student Portal" />
-      <div className="flex-1">
+      <div className="flex-1 pb-24">
         <Topbar title="Welcome back, Maya" />
         <main className="space-y-6 p-6">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

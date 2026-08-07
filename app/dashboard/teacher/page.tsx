@@ -14,11 +14,18 @@ const teacherItems = [
   { href: "/dashboard/teacher/messages", label: "Messages", icon: MessageSquare },
 ];
 
+const teacherItems1 = [
+  { href: "/dashboard/teacher", label: "Dashboard", icon: GraduationCap },
+  { href: "/dashboard/teacher/classes", label: "My Classes", icon: ClipboardList },
+  { href: "/dashboard/teacher/attendance", label: "Attendance", icon: CalendarDays },
+  { href: "/dashboard/teacher/homework", label: "Homework", icon: FileText },
+];
+
 export default function TeacherDashboardPage() {
   return (
     <div className="flex min-h-screen bg-slate-50">
-      <Sidebar items={teacherItems} title="Teacher Portal" />
-      <div className="flex-1">
+      <Sidebar items={teacherItems} items1={teacherItems1} title="Teacher Portal" />
+      <div className="flex-1 pb-24">
         <Topbar title="Good morning, Mr. Riley" />
         <main className="space-y-6 p-6">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

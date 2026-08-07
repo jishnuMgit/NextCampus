@@ -18,7 +18,7 @@ export function Topbar({ title }: { title: string }) {
           <Bell size={16} />
         </button>
         <Button variant="secondary" size="sm" className="rounded-full">
-          <Link href="/settings" className="flex items-center gap-2"><Settings size={16} /> Settings</Link>
+          <Link href={`/dashboard/${title}/settings`} className="flex items-center gap-2"><Settings size={16} /> Settings</Link>
         </Button>
       </div>
     </header>
