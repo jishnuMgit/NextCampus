@@ -13,10 +13,15 @@ type SidebarProps = {
     label: string;
     icon: typeof LayoutGrid;
   }>;
+  items1?: Array<{
+    href: string;
+    label: string;
+    icon: typeof LayoutGrid;
+  }>;
   title: string;
 };
 
-export function Sidebar({ items, items1, title }: SidebarProps & { items1: typeof items }) {
+export function Sidebar({ items, items1, title }: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -90,7 +95,7 @@ export function Sidebar({ items, items1, title }: SidebarProps & { items1: typeo
         aria-label="Mobile Navigation"
       >
         <div className="grid grid-cols-4 overflow-x-auto">
-          {items1.map((item) => {
+          {(items1 ?? items).map((item) => {
             const Icon = item.icon;
 
             const active =
