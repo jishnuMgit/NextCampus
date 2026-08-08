@@ -6,18 +6,11 @@ import { Topbar } from "../../../components/dashboard/topbar";
 import { StatCard } from "../../../components/dashboard/stat-card";
 import { WidgetGrid } from "../../../components/dashboard/widget-grid";
 
-const studentItems = [
-  { href: "/dashboard/student", label: "Dashboard", icon: GraduationCap },
-  { href: "/dashboard/student/attendance", label: "Attendance", icon: CalendarDays },
-  { href: "/dashboard/student/timetable", label: "Timetable", icon: ClipboardList },
-  { href: "/dashboard/student/homework", label: "Homework", icon: ScrollText },
-  { href: "/dashboard/student/fees", label: "Fees", icon: WalletCards },
-];
+
 
 export default function StudentDashboardPage() {
   return (
     <div className="flex min-h-screen bg-slate-50">
-      <Sidebar items={studentItems} title="Student Portal" />
       <div className="flex-1 pb-24">
         <Topbar title="Welcome back, Maya" />
         <main className="space-y-6 p-6">
