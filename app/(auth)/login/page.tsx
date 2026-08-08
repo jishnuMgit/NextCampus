@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Lock, Mail } from "lucide-react";
+import { ArrowRight, Lock, Mail,Eye,EyeOff   } from "lucide-react";
 
 import { Button } from "../../../components/ui/button";
 import { Card } from "../../../components/ui/card";
@@ -11,6 +11,7 @@ import { Card } from "../../../components/ui/card";
 export default function LoginPage() {
   const router = useRouter();
 
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -107,14 +108,16 @@ export default function LoginPage() {
               />
             </label>
 
-            <label className="block rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
-              <span className="mb-2 flex items-center gap-2 text-slate-500">
+            <label className=" rounded-2xl border flex justify-between border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+             <div>
+
+               <span className="mb-2 flex items-center gap-2 text-slate-500">
                 <Lock size={16} />
                 Password
               </span>
 
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
@@ -122,6 +125,13 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 required
               />
+             </div>
+             <div  onClick={() => setShowPassword(!showPassword)} className="cursor-pointer mt-5">
+
+{showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+             </div>
+
+
             </label>
 
           </div>
